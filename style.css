@@ -10,7 +10,7 @@
 .z:active{
     height: 500px;
     width: 500px;
-background-image: url(./img/lol.jpg);
+background-image: url(../img/lol.jpg);
 background-size: 460px;
   display: block;
   visibility: visible;
