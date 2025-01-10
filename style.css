@@ -1,0 +1,111 @@
+.verh{
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    padding-left: 8px;
+    height: 100px;
+    background-color: #151d25;
+}
+.logo{
+    width: 30px;
+    height: 30px;
+}
+.steam{
+position: fixed;
+left: 40px;
+top: 8px;
+text-decoration: none;
+color: darkgrey;
+font-family: "Roboto", serif;
+font-optical-sizing: auto;
+font-size: 14px;
+margin-left: 20px;
+}
+.vid{
+    position: fixed;
+    left: 100px;
+    top: 8px;
+    text-decoration: none;
+    color: darkgrey;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    margin-left: 20px;
+    }
+.frends{
+    position: fixed;
+    left: 140px;
+    top: 8px;
+    text-decoration: none;
+    color: darkgrey;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.gayme{
+    position: fixed;
+    left: 200px;
+    top: 8px;
+    text-decoration: none;
+    color: darkgrey;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.who{
+    position: fixed;
+    left: 250px;
+    top: 8px;
+    text-decoration: none;
+    color: darkgrey;
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-size: 14px;
+    margin-left: 20px;
+}
+.porno{
+    width: 80px;
+    height: 30px;
+    position: fixed;
+    left: 1300px;
+    top: 8px;
+}
+.front{
+    width: 220px;
+    height: 40px;
+    position: fixed;
+    left: 1380px;
+    top: 8px;
+}
+.shop{
+    text-decoration: none;
+    color: rgb(233, 231, 231);
+    font-family: "Roboto", serif;
+    font-optical-sizing: auto;
+    font-size: 20px;
+    margin-left: 20px;
+    margin-left: 10px;
+}
+.base{
+    background-color:#1b2838 ;
+    position: fixed;
+    top: 100px;
+    left: 0;
+    width: 150%;
+    height: 150%;
+}
+.mini{
+ width: auto;
+ height: auto;
+margin-top: 40px;
+margin-left: 290px;
+}
+.soon{
+    text-align: center;
+    font-size: 30px;
+    margin-top: 120px;
+    margin-right: 870px;
+}
