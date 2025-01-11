@@ -89,23 +89,22 @@ margin-left: 20px;
     margin-left: 20px;
     margin-left: 10px;
 }
-.base{
-    background-color:#1b2838 ;
-    position: fixed;
-    top: 100px;
-    left: 0;
-    width: 150%;
-    height: 150%;
-}
 .mini{
  width: auto;
  height: auto;
-margin-top: 40px;
-margin-left: 290px;
+margin-top: 30px;
+margin-left: 280px;
 }
 .soon{
-    text-align: center;
-    font-size: 30px;
-    margin-top: 120px;
-    margin-right: 870px;
+    font-size: 13px;
+    color: darkgray;
+    margin-top: 10px
+}
+.name{
+    font-size: 32px;
+}
+.fakts{
+    font-size: 20px;
+    color: rgb(189, 189, 189);
+    width: 600px;
 }
