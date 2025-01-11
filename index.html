@@ -34,7 +34,123 @@
 <div class="minimeny">
 <img class="mini" src="../XDtest/img/Снимок экрана 2025-01-09 220756.png" alt="minimeny">
 </div>
-<div class="soon">Жди заебал</div>
+<div class="soon">Все игры  >  битва с натуральостью</div>
+<div class="name">Шампуры против плохих людей🥵(только для пк)</div>
+</div>
+</div>
+<canvas id="gameCanvas"></canvas>
+<script>
+    const canvas = document.getElementById('gameCanvas');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 800;
+    canvas.height = 600;
+
+    const spear = {
+        x: canvas.width / 2,
+        y: canvas.height - 30,
+        width: 20,
+        height: 40,
+        speed: 5
+    };
+
+    const balls = [];
+    let score = 0;
+    let gameOver = false;
+
+    // Загружаем изображение флага для шариков
+    const flagImage = new Image();
+    flagImage.src = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRl1t7alvSKEwHDSPWbXSx3S7IQSV5KQpt2hQ&s'; // Это изображение флага
+    let flagLoaded = false;
+
+    flagImage.onload = () => {
+        flagLoaded = true;
+    };
+
+    // Управление стрелками
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') spear.x = Math.max(0, spear.x - spear.speed); // влево
+        if (e.key === 'ArrowRight') spear.x = Math.min(canvas.width - spear.width, spear.x + spear.speed); // вправо
+        if (e.key === ' ' && !gameOver) shootBall(); // выстрел
+        if (e.key === 'r' && gameOver) restartGame(); // рестарт
+    });
+
+    function shootBall() {
+        balls.push({ x: spear.x + spear.width / 2, y: spear.y, radius: 20, speed: 4 });
+    }
+
+    function createRandomBall() {
+        const x = Math.random() * (canvas.width - 40) + 20;
+        const radius = 20 + Math.random() * 10;
+        balls.push({ x, y: -radius, radius, speed: 2 + Math.random() * 3 });
+    }
+
+    function restartGame() {
+        score = 0;
+        balls.length = 0;
+        gameOver = false;
+        update();
+    }
+
+    function update() {
+        if (gameOver) return;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+        // Нарисуем шампур
+        ctx.fillStyle = 'brown';
+        ctx.fillRect(spear.x, spear.y, spear.width, spear.height);
+
+        // Обновим и нарисуем шарики (в виде воздушных шариков с флагом)
+        for (let i = 0; i < balls.length; i++) {
+            balls[i].y += balls[i].speed;
+            if (balls[i].y > canvas.height) {
+                balls.splice(i, 1);
+                i--;
+                continue;
+            }
+
+            if (flagLoaded) {
+                // Нарисуем флаг на шарике
+                ctx.drawImage(flagImage, balls[i].x - balls[i].radius, balls[i].y - balls[i].radius, balls[i].radius * 2, balls[i].radius * 2);
+            } else {
+                // Если флаг еще не загружен, рисуем обычный шарик
+                ctx.beginPath();
+                ctx.arc(balls[i].x, balls[i].y, balls[i].radius, 0, Math.PI * 2);
+                ctx.fillStyle = 'skyblue'; // Цвет воздушного шарика
+                ctx.fill();
+            }
+
+            // Проверка на столкновение с шампуром
+            if (balls[i].y + balls[i].radius >= spear.y &&
+                balls[i].x >= spear.x && balls[i].x <= spear.x + spear.width) {
+                balls.splice(i, 1);
+                score += 10;
+                i--;
+            }
+        }
+
+        // Создаем случайные воздушные шарики
+        if (Math.random() < 0.02) createRandomBall();
+
+        // Отображаем счет
+        ctx.font = '20px Arial';
+        ctx.fillStyle = 'black';
+        ctx.fillText('Score: ' + score, 20, 30);
+
+        if (score >= 100) {
+            gameOver = true;
+            ctx.fillText('Game Over! Press R to restart', 250, canvas.height / 2);
+        }
+
+        requestAnimationFrame(update);
+    }
+
+    update();
+</script>
+<div class="name">Упровления только стрелками больше не как</div>
+<div class="fakts">игру создал рамзан кадыров 82 процента не работает как надо я хотел улучшить но чат джибиди обкончал мой код извините пожалуйста</div>
+
+<blockquote class="tiktok-embed" cite="https://www.tiktok.com/@vorogstanenakolina/video/7254782630636408090" data-video-id="7254782630636408090" style="max-width: 605px;min-width: 325px;" > <section> <a target="_blank" title="@vorogstanenakolina" href="https://www.tiktok.com/@vorogstanenakolina?refer=embed">@vorogstanenakolina</a> <a title="барашкалучшаяжена" target="_blank" href="https://www.tiktok.com/tag/%D0%B1%D0%B0%D1%80%D0%B0%D1%88%D0%BA%D0%B0%D0%BB%D1%83%D1%87%D1%88%D0%B0%D1%8F%D0%B6%D0%B5%D0%BD%D0%B0?refer=embed">#барашкалучшаяжена</a><a title="мирz" target="_blank" href="https://www.tiktok.com/tag/%D0%BC%D0%B8%D1%80z?refer=embed">#мирz</a> <a title="кадыровибарашкаonelove" target="_blank" href="https://www.tiktok.com/tag/%D0%BA%D0%B0%D0%B4%D1%8B%D1%80%D0%BE%D0%B2%D0%B8%D0%B1%D0%B0%D1%80%D0%B0%D1%88%D0%BA%D0%B0onelove?refer=embed">#кадыровибарашкаonelove</a><a title="узкиймир" target="_blank" href="https://www.tiktok.com/tag/%D1%83%D0%B7%D0%BA%D0%B8%D0%B9%D0%BC%D0%B8%D1%80?refer=embed">#узкиймир</a> <a title="кадыровхуйло" target="_blank" href="https://www.tiktok.com/tag/%D0%BA%D0%B0%D0%B4%D1%8B%D1%80%D0%BE%D0%B2%D1%85%D1%83%D0%B9%D0%BB%D0%BE?refer=embed">#кадыровхуйло</a> <a target="_blank" title="♬ оригинальный звук - ᴹᴿメSigma" href="https://www.tiktok.com/music/оригинальный-звук-7202232799330569006?refer=embed">♬ оригинальный звук - ᴹᴿメSigma</a> </section> </blockquote> <script async src="https://www.tiktok.com/embed.js"></script>
 
 </div>
 </div>
